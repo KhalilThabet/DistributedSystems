@@ -28,7 +28,7 @@ add_prog_1(char *host , int x , int y)
 		clnt_perror (clnt, "call failed");
 	}
 	else{
-		printf("Result = %d",*result_1);
+		printf("Result of add= %d",*result_1);
 	}
 #ifndef	DEBUG
 	clnt_destroy (clnt);
