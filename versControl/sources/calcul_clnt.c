@@ -4,7 +4,7 @@
  */
 
 #include <memory.h> /* for memset */
-#include "../sources/calcul.h"
+#include "calcul.h"
 
 /* Default timeout can be changed using clnt_control() */
 static struct timeval TIMEOUT = { 25, 0 };
@@ -40,13 +40,13 @@ puiss_1(Param *argp, CLIENT *clnt)
 }
 
 long *
-dec2bin_1(long int *argp, CLIENT *clnt)
+dec2bin_1(long *argp, CLIENT *clnt)
 {
 	static long clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, DEC2BIN,
-		(xdrproc_t) xdr_int, (caddr_t) argp,
+		(xdrproc_t) xdr_long, (caddr_t) argp,
 		(xdrproc_t) xdr_long, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -70,13 +70,13 @@ puiss_2(Param *argp, CLIENT *clnt)
 }
 
 long *
-dec2bin_2(long int *argp, CLIENT *clnt)
+dec2bin_2(long *argp, CLIENT *clnt)
 {
 	static long clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, DEC2BIN,
-		(xdrproc_t) xdr_int, (caddr_t) argp,
+		(xdrproc_t) xdr_long, (caddr_t) argp,
 		(xdrproc_t) xdr_long, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -85,13 +85,13 @@ dec2bin_2(long int *argp, CLIENT *clnt)
 }
 
 char *
-dec2hex_2(long int *argp, CLIENT *clnt)
+dec2hex_2(long *argp, CLIENT *clnt)
 {
 	static char clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, DEC2HEX,
-		(xdrproc_t) xdr_int, (caddr_t) argp,
+		(xdrproc_t) xdr_long, (caddr_t) argp,
 		(xdrproc_t) xdr_char, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);

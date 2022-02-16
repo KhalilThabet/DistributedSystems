@@ -4,28 +4,29 @@
  * as a guideline for developing your own functions.
  */
 
-#include "../sources/calcul.h"
+#include "calcul.h"
 
-void cal_bin_prog_1(char *host,long int x,long int y)
+
+void
+cal_bin_prog_1(char *host,long x,long y)
 {
 	CLIENT *clnt;
-	void *result_1;
+	void  *result_1;
 	char *calnull_1_arg;
-	long *result_2;
-	Param puiss_1_arg;
-	long *result_3;
-	long int dec2bin_1_arg;
+	long  *result_2;
+	Param  puiss_1_arg;
+	long  *result_3;
+	long  dec2bin_1_arg;
 	puiss_1_arg.a=x;
 	puiss_1_arg.b=y;
 	dec2bin_1_arg=x;
-#ifndef DEBUG
-	clnt = clnt_create(host, CAL_BIN_PROG, CAL_VERS_ONE, "udp");
-	if (clnt == NULL)
-	{
-		clnt_pcreateerror(host);
-		exit(1);
+#ifndef	DEBUG
+	clnt = clnt_create (host, CAL_BIN_PROG, CAL_VERS_ONE, "udp");
+	if (clnt == NULL) {
+		clnt_pcreateerror (host);
+		exit (1);
 	}
-#endif /* DEBUG */
+#endif	/* DEBUG */
 
 	result_1 = calnull_1((void *)&calnull_1_arg, clnt);
 	if (result_1 == (void *)NULL)
@@ -48,32 +49,33 @@ void cal_bin_prog_1(char *host,long int x,long int y)
 	else{
 		printf("(Client Side)  V1: Conversion %ld to binary is %ld\n",x,*result_3);
 	}
-#ifndef DEBUG
-	clnt_destroy(clnt);
-#endif /* DEBUG */
+#ifndef	DEBUG
+	clnt_destroy (clnt);
+#endif	 /* DEBUG */
 }
 
-void cal_bin_prog_2(char *host,long int x,long int y)
+
+void
+cal_bin_prog_2(char *host,long x,long y)
 {
 	CLIENT *clnt;
-	long *result_1;
-	Param puiss_2_arg;
-	long *result_2;
-	long int dec2bin_2_arg;
-	char *result_3;
-	long int dec2hex_2_arg;
+	long  *result_1;
+	Param  puiss_2_arg;
+	long  *result_2;
+	long  dec2bin_2_arg;
+	char  *result_3;
+	long  dec2hex_2_arg;
 	puiss_2_arg.a=x;
 	puiss_2_arg.b=y;
 	dec2bin_2_arg=x;
 	dec2hex_2_arg=x;
-#ifndef DEBUG
-	clnt = clnt_create(host, CAL_BIN_PROG, CAL_VERS_TWO, "udp");
-	if (clnt == NULL)
-	{
-		clnt_pcreateerror(host);
-		exit(1);
+#ifndef	DEBUG
+	clnt = clnt_create (host, CAL_BIN_PROG, CAL_VERS_TWO, "udp");
+	if (clnt == NULL) {
+		clnt_pcreateerror (host);
+		exit (1);
 	}
-#endif /* DEBUG */
+#endif	/* DEBUG */
 
 	result_1 = puiss_2(&puiss_2_arg, clnt);
 	if (result_1 == (long *)NULL)
@@ -99,12 +101,14 @@ void cal_bin_prog_2(char *host,long int x,long int y)
 	else{
 		printf("(Client Side)  V2: Conversion of %ld to hexadecimal is %s\n",x,result_3);
 	}
-#ifndef DEBUG
-	clnt_destroy(clnt);
-#endif /* DEBUG */
+#ifndef	DEBUG
+	clnt_destroy (clnt);
+#endif	 /* DEBUG */
 }
 
-int main(int argc, char *argv[])
+
+int
+main (int argc, char *argv[])
 {
 	char *host;
 
@@ -114,12 +118,12 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	host = argv[1];
-	long int x = atoi(argv[3]);
-	long int y = atoi(argv[4]);
+	long x = atoi(argv[3]);
+	long y = atoi(argv[4]);
 	if (atoi(argv[2])==1)cal_bin_prog_1(host, x, y);
 	else if (atoi(argv[2])==2)cal_bin_prog_2(host, x, y);
 	else {
 		printf("Please choose the version -> Format : localhost version arg1 arg2 \n");
 	}
-	exit(0);
+exit (0);
 }

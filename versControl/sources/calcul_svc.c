@@ -3,7 +3,7 @@
  * It was generated using rpcgen.
  */
 
-#include "../sources/calcul.h"
+#include "calcul.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <rpc/pmap_clnt.h>
@@ -21,7 +21,7 @@ cal_bin_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 {
 	union {
 		Param puiss_1_arg;
-		int dec2bin_1_arg;
+		long dec2bin_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -41,7 +41,7 @@ cal_bin_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		break;
 
 	case DEC2BIN:
-		_xdr_argument = (xdrproc_t) xdr_int;
+		_xdr_argument = (xdrproc_t) xdr_long;
 		_xdr_result = (xdrproc_t) xdr_long;
 		local = (char *(*)(char *, struct svc_req *)) dec2bin_1_svc;
 		break;
@@ -71,8 +71,8 @@ cal_bin_prog_2(struct svc_req *rqstp, register SVCXPRT *transp)
 {
 	union {
 		Param puiss_2_arg;
-		int dec2bin_2_arg;
-		int dec2hex_2_arg;
+		long dec2bin_2_arg;
+		long dec2hex_2_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -90,13 +90,13 @@ cal_bin_prog_2(struct svc_req *rqstp, register SVCXPRT *transp)
 		break;
 
 	case DEC2BIN:
-		_xdr_argument = (xdrproc_t) xdr_int;
+		_xdr_argument = (xdrproc_t) xdr_long;
 		_xdr_result = (xdrproc_t) xdr_long;
 		local = (char *(*)(char *, struct svc_req *)) dec2bin_2_svc;
 		break;
 
 	case DEC2HEX:
-		_xdr_argument = (xdrproc_t) xdr_int;
+		_xdr_argument = (xdrproc_t) xdr_long;
 		_xdr_result = (xdrproc_t) xdr_char;
 		local = (char *(*)(char *, struct svc_req *)) dec2hex_2_svc;
 		break;

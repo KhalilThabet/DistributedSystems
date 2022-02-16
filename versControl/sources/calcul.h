@@ -20,7 +20,7 @@ struct Param {
 };
 typedef struct Param Param;
 
-#define CAL_BIN_PROG 0x20002201
+#define CAL_BIN_PROG 0x2000229
 #define CAL_VERS_ONE 1
 
 #if defined(__STDC__) || defined(__cplusplus)
@@ -31,8 +31,8 @@ extern  void * calnull_1_svc(void *, struct svc_req *);
 extern  long * puiss_1(Param *, CLIENT *);
 extern  long * puiss_1_svc(Param *, struct svc_req *);
 #define DEC2BIN 2
-extern  long * dec2bin_1(long int *, CLIENT *);
-extern  long * dec2bin_1_svc(long int *, struct svc_req *);
+extern  long * dec2bin_1(long *, CLIENT *);
+extern  long * dec2bin_1_svc(long *, struct svc_req *);
 extern int cal_bin_prog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -52,11 +52,11 @@ extern int cal_bin_prog_1_freeresult ();
 #if defined(__STDC__) || defined(__cplusplus)
 extern  long * puiss_2(Param *, CLIENT *);
 extern  long * puiss_2_svc(Param *, struct svc_req *);
-extern  long * dec2bin_2(long int *, CLIENT *);
-extern  long * dec2bin_2_svc(long int *, struct svc_req *);
+extern  long * dec2bin_2(long *, CLIENT *);
+extern  long * dec2bin_2_svc(long *, struct svc_req *);
 #define DEC2HEX 3
-extern  char * dec2hex_2(long int *, CLIENT *);
-extern  char * dec2hex_2_svc(long int *, struct svc_req *);
+extern  char * dec2hex_2(long *, CLIENT *);
+extern  char * dec2hex_2_svc(long *, struct svc_req *);
 extern int cal_bin_prog_2_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
