@@ -97,7 +97,7 @@ cal_bin_prog_2(struct svc_req *rqstp, register SVCXPRT *transp)
 
 	case DEC2HEX:
 		_xdr_argument = (xdrproc_t) xdr_int;
-		_xdr_result = (xdrproc_t) xdr_long;
+		_xdr_result = (xdrproc_t) xdr_char;
 		local = (char *(*)(char *, struct svc_req *)) dec2hex_2_svc;
 		break;
 

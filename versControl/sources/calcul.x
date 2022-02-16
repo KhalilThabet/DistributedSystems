@@ -18,7 +18,7 @@ program CAL_BIN_PROG
 	{
 		long int PUISS(Param) = 1;
 		long int DEC2BIN(int) = 2;
-		long int DEC2HEX(int) = 3;
+		char DEC2HEX(int) = 3;
 	}
 	= 2;
 }

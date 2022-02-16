@@ -41,7 +41,7 @@ puiss_1_svc(Param *argp, struct svc_req *rqstp)
     for (i = 0; i < argp->b; ++i)
         number *= argp->a;
 	result=number;
-	printf("Calculating Power 1\n");
+	printf("(Server Side)  V1: Calculating Power of %ld\n",argp->a);
 	return &result;
 }
 
@@ -51,7 +51,7 @@ dec2bin_1_svc(long int *argp, struct svc_req *rqstp)
 	static long  result;
 
 	result=convert(*argp);
-	printf("Converting %ld to %ld\n",*argp,result);
+	printf("(Server Side)  V1: Conversion of %ld to %ld\n",*argp,result);
 
 	return &result;
 }
@@ -67,7 +67,7 @@ puiss_2_svc(Param *argp, struct svc_req *rqstp)
     for (i = 0; i < argp->b; ++i)
         number *= argp->a;
 	result=number;
-	printf("Calculating %ld power %ld\n",argp->a,argp->b);
+	printf("(Server Side)  V2: Calculating %ld power %ld\n",argp->a,argp->b);
 	return &result;
 }
 
@@ -76,16 +76,28 @@ dec2bin_2_svc(long int *argp, struct svc_req *rqstp)
 {
 	static long  result;
 	result=convert(*argp);
-	printf("Converting %ld to binary %ld\n",*argp,result);
+	printf("(Server Side)  V2: Converting %ld to binary %ld\n",*argp,result);
 
 	return &result;
 }
 
-long *
+char *
 dec2hex_2_svc(long int *argp, struct svc_req *rqstp)
 {
-	static long  result;
-	result=*argp;
-
-	return &result;
+	long decimalnum=*argp, quotient, remainder;
+    int i, j = 0;
+    static char result[100];
+	quotient = decimalnum;
+ 
+    while (quotient != 0)
+    {
+        remainder = quotient % 16;
+        if (remainder < 10)
+            result[j++] = 48 + remainder;
+        else
+            result[j++] = 55 + remainder;
+        quotient = quotient / 16;
+    }
+	printf("(Server Side)  V2: Converting %ld to Hexadecimal",*argp);
+	return result;
 }

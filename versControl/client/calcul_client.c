@@ -30,7 +30,7 @@ void cal_bin_prog_1(char *host,long int x,long int y)
 	result_1 = calnull_1((void *)&calnull_1_arg, clnt);
 	if (result_1 == (void *)NULL)
 	{
-		clnt_perror(clnt, "call failed");
+		clnt_perror(clnt, "(Client Side)  call failed");
 	}
 	result_2 = puiss_1(&puiss_1_arg, clnt);
 	if (result_2 == (long *)NULL)
@@ -38,7 +38,7 @@ void cal_bin_prog_1(char *host,long int x,long int y)
 		clnt_perror(clnt, "call failed");
 	}
 	else{
-		printf("V1: %ld power %ld = %ld\n",x,y,*result_2);
+		printf("(Client Side)  V1: %ld power %ld = %ld\n",x,y,*result_2);
 	}
 	result_3 = dec2bin_1(&dec2bin_1_arg, clnt);
 	if (result_3 == (long *)NULL)
@@ -46,7 +46,7 @@ void cal_bin_prog_1(char *host,long int x,long int y)
 		clnt_perror(clnt, "call failed");
 	}
 	else{
-		printf("V1: %ld to binary is %ld\n",x,*result_3);
+		printf("(Client Side)  V1: Conversion %ld to binary is %ld\n",x,*result_3);
 	}
 #ifndef DEBUG
 	clnt_destroy(clnt);
@@ -60,7 +60,7 @@ void cal_bin_prog_2(char *host,long int x,long int y)
 	Param puiss_2_arg;
 	long *result_2;
 	long int dec2bin_2_arg;
-	long *result_3;
+	char *result_3;
 	long int dec2hex_2_arg;
 	puiss_2_arg.a=x;
 	puiss_2_arg.b=y;
@@ -81,7 +81,7 @@ void cal_bin_prog_2(char *host,long int x,long int y)
 		clnt_perror(clnt, "call failed");
 	}
 	else{
-		printf("V2: %ld power %ld = %ld\n",x,y,*result_1);
+		printf("(Client Side)  V2: %ld power %ld = %ld\n",x,y,*result_1);
 	}
 	result_2 = dec2bin_2(&dec2bin_2_arg, clnt);
 	if (result_2 == (long *)NULL)
@@ -89,15 +89,15 @@ void cal_bin_prog_2(char *host,long int x,long int y)
 		clnt_perror(clnt, "call failed");
 	}
 	else{
-		printf("V2: %ld to binary is %ld\n",x,*result_2);
+		printf("(Client Side)  V2: Conversion of %ld to binary is %ld\n",x,*result_2);
 	}
 	result_3 = dec2hex_2(&dec2hex_2_arg, clnt);
-	if (result_3 == (long *)NULL)
+	if (result_3 == (char *)NULL)
 	{
 		clnt_perror(clnt, "call failed");
 	}
 	else{
-		printf("V2: %ld to hexadecimal is %p\n",x,result_3);
+		printf("(Client Side)  V2: Conversion of %ld to hexadecimal is %s\n",x,result_3);
 	}
 #ifndef DEBUG
 	clnt_destroy(clnt);

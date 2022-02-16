@@ -55,8 +55,8 @@ extern  long * puiss_2_svc(Param *, struct svc_req *);
 extern  long * dec2bin_2(long int *, CLIENT *);
 extern  long * dec2bin_2_svc(long int *, struct svc_req *);
 #define DEC2HEX 3
-extern  long * dec2hex_2(long int *, CLIENT *);
-extern  long * dec2hex_2_svc(long int *, struct svc_req *);
+extern  char * dec2hex_2(long int *, CLIENT *);
+extern  char * dec2hex_2_svc(long int *, struct svc_req *);
 extern int cal_bin_prog_2_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -65,8 +65,8 @@ extern  long * puiss_2_svc();
 extern  long * dec2bin_2();
 extern  long * dec2bin_2_svc();
 #define DEC2HEX 3
-extern  long * dec2hex_2();
-extern  long * dec2hex_2_svc();
+extern  char * dec2hex_2();
+extern  char * dec2hex_2_svc();
 extern int cal_bin_prog_2_freeresult ();
 #endif /* K&R C */
 

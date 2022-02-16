@@ -84,15 +84,15 @@ dec2bin_2(long int *argp, CLIENT *clnt)
 	return (&clnt_res);
 }
 
-long *
+char *
 dec2hex_2(long int *argp, CLIENT *clnt)
 {
-	static long clnt_res;
+	static char clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, DEC2HEX,
 		(xdrproc_t) xdr_int, (caddr_t) argp,
-		(xdrproc_t) xdr_long, (caddr_t) &clnt_res,
+		(xdrproc_t) xdr_char, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
 	}
