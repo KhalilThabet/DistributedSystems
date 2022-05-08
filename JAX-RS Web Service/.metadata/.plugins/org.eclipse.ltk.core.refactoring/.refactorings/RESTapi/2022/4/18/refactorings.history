@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;RESTapp&apos;&#x0D;&#x0A;- Original project: &apos;RESTapi&apos;&#x0D;&#x0A;- Destination element: &apos;RESTapp&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     RessourcesV1.java&#x0D;&#x0A;     CustomerDataService.java&#x0D;&#x0A;     Customer.java&#x0D;&#x0A;     AppSetup.java&#x0D;&#x0A;     RessourcesV2.java" description="Copy files" element1="src/main/java/RESTapi/RessourcesV1.java" element2="src/main/java/RESTapi/CustomerDataService.java" element3="src/main/java/RESTapi/Customer.java" element4="src/main/java/RESTapi/AppSetup.java" element5="src/main/java/RESTapi/RessourcesV2.java" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1650918927210" target="/RESTapp/src/main/java/RESTapp" units="0" version="1.0"/>
+</session>

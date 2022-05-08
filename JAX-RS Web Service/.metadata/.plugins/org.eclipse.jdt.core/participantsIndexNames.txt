@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\Users\Khali\Desktop\TPJAXRS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2239032330.index
+\RESTproject\src\main\java
+C:\Users\Khali\Desktop\TPJAXRS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\702623476.index
+\restproj\src\main\java
+C:\Users\Khali\Desktop\TPJAXRS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2086570473.index
+\RESTapi\src\main\java
+C:\Users\Khalil\Desktop\TPJAXRS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\179934281.index
+\RESTapp\src\main\java
