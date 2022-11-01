@@ -1,4 +1,4 @@
-##Table Analysis
+## Table Analysis
 |Sequential|Parallel|
 |-|-|
 |0 us |4502 us |
@@ -11,7 +11,7 @@
 |0 us |1914 us|
 |1 us |4685 us|
 |1 us |5744 us|
-##Average Sequential Runtime
+## Average Sequential Runtime
 0.9 us
-##Average Parallel Runtime
+## Average Parallel Runtime
 42923 us
